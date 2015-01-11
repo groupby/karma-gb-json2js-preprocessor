@@ -20,7 +20,7 @@ module.exports = function(config) {
     },
 
     plugins: [
-        'karma-gb-json2js-preprocessor'
+      'karma-gb-json2js-preprocessor'
     ],
 
     files: [
@@ -29,16 +29,8 @@ module.exports = function(config) {
     ],
 
     gbJson2JsPreprocessor: {
-      // strip this from the file path
-      stripPrefix: 'test/fixture/',
-      // prepend this to the
-      prependPrefix: 'served/',
-
-      /* or define a custom transform function
-      cacheIdFromPath: function(filepath) {
-        return cacheId;
-      }
-      */
+      // The module the json will be loaded into, defaults to "mocks"
+      //moduleName: 'foo'
     }
   });
 };
@@ -48,7 +40,7 @@ module.exports = function(config) {
 
 This preprocessor converts JSON files into Angular constants and puts them in separate Angular modules; each named the same as the source JSON file and generates Angular modules.
 
-For instance this `test/fixture/data.json`  ...
+For instance this `test/fixture/loginService-mocks.json`  ...
 ```json
 {
     prop: val
@@ -56,22 +48,22 @@ For instance this `test/fixture/data.json`  ...
 ```
 ... with the configuration given above will be converted into:
 ```js
-angular.module('served/data.json', []).constant('servedData', {
+angular.module('mocks', []).constant('LOGIN_SERVICE_MOCKS', {
     prop: 'val'
 });
 ```
 Inject json fixture into your test case:
 ```js
 describe('me', function(){
-    beforeEach(module('served/data.json'));
+    beforeEach(module('mocks'));
 
     it('should not fail', function() {
-        var testFixture;
-        inject(function (_servedData_) {
-            testFixture = _servedData_;
+        var LOGIN_SERVICE_MOCKS;
+        inject(function (_LOGIN_SERVICE_MOCKS_) {
+            LOGIN_SERVICE_MOCKS = _LOGIN_SERVICE_MOCKS_;
         });
 
-        expect(testFixture).toEqual({
+        expect(LOGIN_SERVICE_MOCKS).toEqual({
             prop: 'val'
         });
     });

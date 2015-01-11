@@ -2,20 +2,19 @@
 describe('json2j preprocessor', function () {
     'use strict';
 
-    beforeEach(module('test/fixtures/empty.json'));
-    beforeEach(module('test/fixtures/complex.json'));
+    beforeEach(module('foo'));
 
     it('should work on an empty object', function () {
-        var testFixturesEmpty;
-        inject(function (_testFixturesEmpty_) {
-            testFixturesEmpty = _testFixturesEmpty_;
+        var EMPTY_MOCK;
+        inject(function (_EMPTY_MOCK_) {
+            EMPTY_MOCK = _EMPTY_MOCK_;
         });
 
-        expect(testFixturesEmpty).toEqual({});
+        expect(EMPTY_MOCK).toEqual({});
     });
 
-    var checkComplexObject = function (testFixturesComplex) {
-        expect(testFixturesComplex).toEqual({
+    var checkComplexObject = function (COMPLEX_MOCK) {
+        expect(COMPLEX_MOCK).toEqual({
             field: 'property',
             subObject: [
                 'arrayElem1',
@@ -30,18 +29,18 @@ describe('json2j preprocessor', function () {
     };
 
     it('should work on a complex object', function () {
-        var testFixturesComplex;
-        inject(function (_testFixturesComplex_) {
-            testFixturesComplex = _testFixturesComplex_;
+        var COMPLEX_MOCK;
+        inject(function (_COMPLEX_MOCK_) {
+            COMPLEX_MOCK = _COMPLEX_MOCK_;
         });
 
-        checkComplexObject(testFixturesComplex);
+        checkComplexObject(COMPLEX_MOCK);
     });
 
     it('should allow accessing the json during configuration phase', function () {
         var injectedDuringConfig;
-        angular.module('testModule', ['test/fixtures/complex.json']).config(function (_testFixturesComplex_) {
-            injectedDuringConfig = _testFixturesComplex_;
+        angular.module('testModule', ['foo']).config(function (_COMPLEX_MOCK_) {
+            injectedDuringConfig = _COMPLEX_MOCK_;
         });
 
         inject(module('testModule'));
