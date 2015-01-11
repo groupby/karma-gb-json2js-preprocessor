@@ -3,7 +3,7 @@
 module.exports = function (config) {
     var preprocessors = config.preprocessors;
     // put JSON data into a mock
-    preprocessors['**/*.json'] = 'ng-json2js';
+    preprocessors['**/*.json'] = 'gb-json2js';
 
     config.set({
         frameworks: ['jasmine'],
@@ -16,7 +16,7 @@ module.exports = function (config) {
             'test/vendor/angular.js',
             'test/vendor/angular-mocks.js',
             'test/fixtures/*.json',
-            'test/ng-json2js.spec.js',
+            'test/gb-json2js.spec.js'
         ],
 
         // list of files to exclude
@@ -25,7 +25,7 @@ module.exports = function (config) {
         preprocessors: preprocessors,
 
         plugins: config.plugins.concat([
-            require('./lib/index.js'),
+            require('./lib/index.js')
         ]),
 
         // test results reporter to use
@@ -63,6 +63,6 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false,
+        singleRun: false
     });
 };

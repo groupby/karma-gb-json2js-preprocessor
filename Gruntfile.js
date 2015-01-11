@@ -4,18 +4,14 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     grunt.initConfig({
-        'ddescribe-iit': {
-            files: ['test/ng-json2js.spec.js'],
-        },
-
         eslint: {
             all: {
                 src: [
                     '*.js',
                     'lib',
-                    'test',
-                ],
-            },
+                    'test'
+                ]
+            }
         },
 
         jscs: {
@@ -23,56 +19,43 @@ module.exports = function (grunt) {
                 src: [
                     '*.js',
                     'lib/**/*.js',
-                    'test/**/*.js',
+                    'test/**/*.js'
                 ],
                 options: {
-                    config: '.jscsrc',
-                },
-            },
+                    config: '.jscsrc'
+                }
+            }
         },
 
         jsonlint: {
             all: {
                 src: [
                     '.jshintrc',
-                    '{lib,test}/**/*.json',
-                ],
-            },
+                    '{lib,test}/**/*.json'
+                ]
+            }
         },
 
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
-                singleRun: true,
-            },
-        },
-
-        'merge-conflict': {
-            files: [
-                '*',
-                '{lib,test}/**/*',
-            ],
-        },
+                singleRun: true
+            }
+        }
     });
 
     // Load all grunt tasks matching the `grunt-*` pattern.
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('commitChecks', [
-        'ddescribe-iit',
-        'merge-conflict',
-    ]);
-
     grunt.registerTask('lint', [
         'eslint',
         'jscs',
-        'jsonlint',
+        'jsonlint'
     ]);
 
     grunt.registerTask('test', [
         'lint',
-        'commitChecks',
-        'karma:unit',
+        'karma:unit'
     ]);
 
     grunt.registerTask('default', ['test']);

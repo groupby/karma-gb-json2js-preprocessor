@@ -1,11 +1,11 @@
 {
-  "name": "karma-ng-json2js-preprocessor",
-  "version": "1.0.1-pre",
+  "name": "karma-gb-json2js-preprocessor",
+  "version": "0.0.1",
   "description": "A Karma plugin. Compile JSON files to Angular constants on the fly.",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/EE/karma-ng-json2js-preprocessor.git"
+    "url": "git://github.com/ehacke/karma-gb-json2js-preprocessor.git"
   },
   "keywords": [
     "karma-plugin",
@@ -15,9 +15,9 @@
     "json2js"
   ],
   "author": {
-    "name": "Michał Gołębiowski",
-    "email": "michal.golebiowski@laboratorium.ee",
-    "url": "http://laboratorium.ee"
+    "name": "Eric Hacke",
+    "email": "ehacke@gmail.com",
+    "url": ""
   },
   "files": [
     "lib"
@@ -25,13 +25,10 @@
   "devDependencies": {
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
-    "grunt-ddescribe-iit": "0.0.4",
     "grunt-eslint": "1.1.0",
     "grunt-jscs": "0.8.0",
     "grunt-jsonlint": "1.0.4",
     "grunt-karma": "0.9.0",
-    "grunt-merge-conflict": "0.0.2",
-    "jscs-trailing-comma": "0.3.0",
     "karma": "0.12.24",
     "karma-jasmine": "0.1.5",
     "karma-phantomjs-launcher": "0.1.4",
