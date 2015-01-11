@@ -1,12 +1,12 @@
-# karma-ng-json2js-preprocessor [![Build Status](https://travis-ci.org/EE/karma-ng-json2js-preprocessor.svg?branch=master)](https://travis-ci.org/EE/karma-ng-json2js-preprocessor)
+# karma-gb-json2js-preprocessor
 
 > Preprocessor for converting JSON files to [AngularJS](http://angularjs.org/) constants.
 
 ## Installation
 
-The easiest way is to keep `karma-ng-json2js-preprocessor` as a devDependency in your `package.json`. You can simple do it by:
+The easiest way is to keep `karma-gb-json2js-preprocessor` as a devDependency in your `package.json`. You can simple do it by:
 ```bash
-npm install karma-ng-json2js-preprocessor --save-dev
+npm install karma-gb-json2js-preprocessor --save-dev
 ```
 
 ## Configuration
@@ -16,11 +16,11 @@ module.exports = function(config) {
   config.set({
     preprocessors: {
       '**/*.html': ['ng-html2js'],
-      '**/*.json': ['ng-json2js']
+      '**/*.json': ['gb-json2js']
     },
 
     plugins: [
-        'karma-ng-json2js-preprocessor'
+        'karma-gb-json2js-preprocessor'
     ],
 
     files: [
@@ -28,7 +28,7 @@ module.exports = function(config) {
       '*.html'
     ],
 
-    ngJson2JsPreprocessor: {
+    gbJson2JsPreprocessor: {
       // strip this from the file path
       stripPrefix: 'test/fixture/',
       // prepend this to the
