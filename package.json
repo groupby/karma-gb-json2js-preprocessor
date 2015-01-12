@@ -1,11 +1,11 @@
 {
   "name": "karma-gb-json2js-preprocessor",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Karma plugin. Compile JSON files to Angular constants on the fly.",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ehacke/karma-gb-json2js-preprocessor.git"
+    "url": "git://github.com/groupby/karma-gb-json2js-preprocessor.git"
   },
   "keywords": [
     "karma-plugin",
@@ -17,7 +17,7 @@
   "author": {
     "name": "Eric Hacke",
     "email": "ehacke@gmail.com",
-    "url": ""
+    "url": "http://www.groupbyinc.com"
   },
   "files": [
     "lib"
