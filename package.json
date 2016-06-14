@@ -36,7 +36,7 @@
     "time-grunt": "1.0.0"
   },
   "peerDependencies": {
-    "karma": ">=0.10.0 <0.13.0"
+    "karma": ">=0.10.0"
   },
   "scripts": {
     "test": "grunt"
