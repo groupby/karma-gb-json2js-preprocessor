@@ -1,5 +1,7 @@
 # karma-gb-json2js-preprocessor
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/groupby/karma-gb-json2js-preprocessor.svg)](https://greenkeeper.io/)
+
 > Preprocessor for converting JSON files to [AngularJS](http://angularjs.org/) constants.
 
 ## Installation
